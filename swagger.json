@@ -23,32 +23,11 @@
         "operationId": "setUser",
         "parameters": [
           {
-            "name": "name",
-            "in": "body",
-            "description": "The new user's name",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "email",
-            "in": "body",
-            "description": "The new user's e-mail, an email can't nor shouldn't be inserted twice in the database",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "username",
-            "in": "body",
-            "description": "The new user's username, must be unique",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "password",
-            "in": "body",
-            "description": "The new user's password",
-            "type": "string",
-            "required": true
+            "name":"body",
+            "in":"body",
+            "schema":{
+              "$ref":"#/definitions/Users/properties/postuserbody"
+            }
           }
         ],
         "responses": {
@@ -74,17 +53,10 @@
         "operationId": "loginUser",
         "parameters": [
           {
-            "name": "username",
+            "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/Users/properties/username"
-            }
-          },
-          {
-            "name": "password",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/Users/properties/password"
+              "$ref": "#/definitions/Users/properties/loginbody"
             }
           }
         ],
@@ -126,11 +98,11 @@
         "operationId": "getUserInfo",
         "parameters": [
           {
-            "name": "username",
+            "name": "body",
             "in": "body",
-            "description": "Username from which the information is required",
-            "type": "string",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/userbody"
+            }
           }
         ],
         "responses": {
@@ -153,18 +125,11 @@
         "operationId": "updateName",
         "parameters": [
           {
-            "name": "name",
+            "name": "body",
             "in": "body",
-            "description": "User's new name",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "username",
-            "in": "body",
-            "description": "The user which is desired to be updated",
-            "type": "string",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/nameupdbody"
+            }
           }
         ],
         "responses": {
@@ -184,18 +149,11 @@
         "operationId": "updateMail",
         "parameters": [
           {
-            "name": "email",
+            "name": "body",
             "in": "body",
-            "description": "User's new email",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "username",
-            "in": "body",
-            "description": "The user which is desired to be updates",
-            "type": "string",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/emailupdbody"
+            }
           }
         ],
         "responses": {
@@ -215,25 +173,11 @@
         "operationId": "updateAll",
         "parameters": [
           {
-            "name": "name",
+            "name": "body",
             "in": "body",
-            "description": "User's new name",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "email",
-            "in": "body",
-            "description": "User's new email",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "username",
-            "in": "body",
-            "description": "The user which is desired to be updated",
-            "type": "string",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/allupdbody"
+            }
           }
         ],
         "responses": {
@@ -253,39 +197,11 @@
         "operationId": "setProject",
         "parameters": [
           {
-            "name": "name",
+            "name": "body",
             "in": "body",
-            "description": "The new project's name.",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "description",
-            "in": "body",
-            "description": "The new project's description.",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "start_date",
-            "in": "body",
-            "description": "The new project's start date. Format yyyy-mm-dd.",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "end_date",
-            "in": "body",
-            "description": "The new project's end date, if existing. Format yyyy-mm-dd.",
-            "type": "string",
-            "required": false
-          },
-          {
-            "name": "image",
-            "in": "body",
-            "description": "The Project's image, if existing.",
-            "type": "string",
-            "required": false
+            "schema": {
+              "$ref": "#/definitions/Users/properties/postprojectbody"
+            }
           }
         ],
         "responses": {
@@ -308,11 +224,11 @@
         "operationId": "getProject",
         "parameters": [
           {
-            "name": "name",
+            "name": "body",
             "in": "body",
-            "description": "The project's name that was just created",
-            "type": "string",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/lastprojectbody"
+            }
           }
         ],
         "responses": {
@@ -335,11 +251,11 @@
         "operationId": "getUserProjects",
         "parameters": [
           {
-            "name": "userid",
+            "name": "body",
             "in": "body",
-            "description": "The user's id to identify it's projects",
-            "type": "number",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/userprojectsbody"
+            }
           }
         ],
         "responses": {
@@ -358,11 +274,11 @@
         "operationId": "getProjectInfo",
         "parameters": [
           {
-            "name": "projectid",
+            "name": "body",
             "in": "body",
-            "description": "The project id of which it is desired its information",
-            "type": "number",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/projectinfobody"
+            }
           }
         ],
         "responses": {
@@ -381,25 +297,11 @@
         "operationId": "setMember",
         "parameters": [
           {
-            "name": "projid",
+            "name": "body",
             "in": "body",
-            "description": "The project id of which the user is a member",
-            "type": "number",
-            "required": true
-          },
-          {
-            "name": "user",
-            "in": "body",
-            "description": "The user id of who is the new member",
-            "type": "number",
-            "required": true
-          },
-          {
-            "name": "role",
-            "in": "body",
-            "description": "The user's role in the current project",
-            "type": "string",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/Users/properties/memberbody"
+            }
           }
         ],
         "responses": {
@@ -420,17 +322,62 @@
   "definitions": {
     "Users": {
       "properties": {
-        "username": {
-          "description": "User to log in",
+        "loginbody": {
+          "description": "User and password to log in",
           "type": "string",
           "required": true,
-          "example": "test"
+          "example": "{\"username\":\"test\",\"password\":\"test\"}"
         },
-        "password": {
-          "description": "The password according to that user",
+        "postuserbody": {
+          "description": "Create a new user entry in the database",
           "type": "string",
           "required": true,
-          "example": "test"
+          "example": "{\"name\":\"test profile\",\"email\":\"test@test.com\",\"username\":\"test\",\"password\":\"test\"}"
+        },
+        "userbody": {
+          "type":"string",
+          "required":true,
+          "example": "{\"username\":\"test\"}"
+        },
+        "nameupdbody": {
+          "type":"string",
+          "required":true,
+          "example": "{\"name\":\"new name\",\"username\":\"test\"}"
+        },
+        "emailupdbody": {
+          "type":"string",
+          "required":true,
+          "example": "{\"email\":\"newemail@test.com\",\"username\":\"test\"}"
+        },
+        "allupdbody": {
+          "type":"string",
+          "required":true,
+          "example": "{\"name\":\"new name\",\"email\":\"newemail@test.com\",\"username\":\"test\"}"
+        },
+        "postprojectbody": {
+          "type":"string",
+          "required":true,
+          "example": "{\"name\":\"testproject\",\"description\":\"project description\",\"start_date\":\"2019-09-29\",\"end_date\":null,\"image\":null}"
+        },
+        "lastprojectbody": {
+          "type":"string",
+          "required":true,
+          "example": "{\"name\":\"projectname\"}"
+        },
+        "userprojectsbody": {
+          "type":"number",
+          "required":true,
+          "example": "{\"userid\":1}"
+        },
+        "projectinfobody": {
+          "type":"number",
+          "required":true,
+          "example": "{\"projectid\":1}"
+        },
+        "memberbody": {
+          "type":"string",
+          "required":true,
+          "example": "{\"projid\":1,\"user\":1,\"role\":\"ScrumMaster\"}"
         }
       }
     }
