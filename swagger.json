@@ -74,11 +74,11 @@
         "operationId": "loginUser",
         "parameters": [
           {
-            "name": "username",
+            "name": "body",
             "in": "body",
-            "description": "An already existing username",
-            "type": "string",
-            "required": true
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
           },
           {
             "name": "password",
@@ -416,5 +416,14 @@
   "externalDocs": {
     "description": "Find out more about Swagger",
     "url": "http://swagger.io"
+  },
+  "definitions": {
+    "Users": {
+      "username": {
+        "description": "User to log in",
+        "type": "string",
+        "required": true
+      }
+    }
   }
 }
