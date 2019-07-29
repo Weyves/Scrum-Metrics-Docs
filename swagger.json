@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "title": "Scrum-Metrics"
   },
-  "host": "localhost:3000",
+  "host": "192.168.0.108:3000",
   "basePath": "/",
   "schemes": [
     "http"
