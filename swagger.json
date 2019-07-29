@@ -77,14 +77,14 @@
             "name": "username",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/User/properties/username"
+              "$ref": "#/definitions/Users/properties/username"
             }
           },
           {
             "name": "password",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/User/properties/password"
+              "$ref": "#/definitions/Users/properties/password"
             }
           }
         ],
