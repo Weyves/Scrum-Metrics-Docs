@@ -74,19 +74,11 @@
         "operationId": "loginUser",
         "parameters": [
           {
-            "name": "username",
+            "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/User/username"
+              "$ref": "#/definitions/User"
             }
-          },
-          {
-            "name": "password",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/User/password"
-            }
-            
           }
         ],
         "responses": {
