@@ -23,10 +23,10 @@
         "operationId": "setUser",
         "parameters": [
           {
-            "name":"body",
-            "in":"body",
-            "schema":{
-              "$ref":"#/definitions/Users/properties/postuserbody"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/postuserbody"
             }
           }
         ],
@@ -313,6 +313,400 @@
           }
         }
       }
+    },
+    "/api/projmembers": {
+      "post": {
+        "description": "Retrieves the members in a project",
+        "operationId": "getMemebers",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/projmembody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/username": {
+      "post": {
+        "description": "Returns a user's name",
+        "operationId": "getUserName",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/usernamebody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/setnewdesc": {
+      "put": {
+        "description": "Updates a project's description",
+        "operationId": "setNewDesc",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/setnewdescbody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Description updated"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/deletemember": {
+      "post": {
+        "description": "Delete a member from a project",
+        "operationId": "deleteMember",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/deletemember"
+            },
+            "responses": {
+              "200": {
+                "description": "Member deleted succesfully"
+              },
+              "500": {
+                "description": "Database error"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/updmemrole": {
+      "put": {
+        "description": "Update a member's role in a project",
+        "operationId": "updRole",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/updmemrole"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Role updated succesfully"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/setsprint": {
+      "post": {
+        "description": "Creates a sprint for the current project",
+        "operationId": "newSprint",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/setsprint"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Name already in use"
+          },
+          "201": {
+            "description": "Sprint created succesfully"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/getsprints": {
+      "post": {
+        "description": "Gets all the sprints in a project",
+        "operationId": "getSprints",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/getsprints"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/currsprint": {
+      "post": {
+        "description": "Gets the current sprint",
+        "operationId": "getCurSprint",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/currsprint"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/getstories": {
+      "post": {
+        "description": "Retrieves a project's stories",
+        "operationId": "getStories",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/getstories"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/poststory": {
+      "post": {
+        "description": "Creates a new story in the sprint",
+        "operationId": "setStory",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/setstory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Story created"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/updstorycol": {
+      "put": {
+        "description": "Updates the column a story is in",
+        "operationId": "updStoryCol",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/updstorycol"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Story column updated"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/sprintstatus": {
+      "post": {
+        "description": "Retrieves the current sprint's status",
+        "operationId": "checkSprint",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/sprintstatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/endsprint": {
+      "put": {
+        "description": "Set the sprint's status to done",
+        "operationId": "endSprint",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/endsprint"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sprint finished succesfully"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/unfinishedstories": {
+      "post": {
+        "description": "Retrieves all the stories that are not in the Done column",
+        "operationId": "getUnfinishedStories",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/unfinishedstories"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/movestory": {
+      "put": {
+        "description": "Moves a story to another sprint",
+        "operationId": "moveStory",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/movestory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated succesfully"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/editstory": {
+      "put": {
+        "description": "Edits a story",
+        "operationId": "editStory",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/editstory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Story updated succesfully"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/getnextsprint": {
+      "post": {
+        "description": "Gets a story's sprint",
+        "operationId": "getNextSprint",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/nextsprint"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull query"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
     }
   },
   "externalDocs": {
@@ -335,49 +729,134 @@
           "example": "{\"name\":\"test profile\",\"email\":\"test@test.com\",\"username\":\"test\",\"password\":\"test\"}"
         },
         "userbody": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "example": "{\"username\":\"test\"}"
         },
         "nameupdbody": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "example": "{\"name\":\"new name\",\"username\":\"test\"}"
         },
         "emailupdbody": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "example": "{\"email\":\"newemail@test.com\",\"username\":\"test\"}"
         },
         "allupdbody": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "example": "{\"name\":\"new name\",\"email\":\"newemail@test.com\",\"username\":\"test\"}"
         },
         "postprojectbody": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "example": "{\"name\":\"testproject\",\"description\":\"project description\",\"start_date\":\"2019-09-29\",\"end_date\":null,\"image\":null}"
         },
         "lastprojectbody": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "example": "{\"name\":\"projectname\"}"
         },
         "userprojectsbody": {
-          "type":"number",
-          "required":true,
+          "type": "number",
+          "required": true,
           "example": "{\"userid\":1}"
         },
         "projectinfobody": {
-          "type":"number",
-          "required":true,
+          "type": "number",
+          "required": true,
           "example": "{\"projectid\":1}"
         },
         "memberbody": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "example": "{\"projid\":1,\"user\":1,\"role\":\"ScrumMaster\"}"
+        },
+        "projmembody": {
+          "type": "string",
+          "required": true,
+          "example": "{\"projid\":1}"
+        },
+        "usernamebody": {
+          "type": "string",
+          "required": true,
+          "example": "{\"userid\":1}"
+        },
+        "setnewdescbody": {
+          "type": "string",
+          "required": true,
+          "example": "{\"description\":1,\"projid\":1}"
+        },
+        "deletemember": {
+          "type": "string",
+          "required": true,
+          "example": "{\"userid\":1,\"projid\":1}"
+        },
+        "updmemrole": {
+          "type": "string",
+          "required": true,
+          "example": "{\"role\":\"Team Member\",\"projid\":1,\"userid\":1}"
+        },
+        "setsprint": {
+          "type": "string",
+          "required": true,
+          "example": "{\"name\":\"Sprint 1\",\"projid\":1}"
+        },
+        "getsprints": {
+          "type": "string",
+          "required": true,
+          "example": "{\"projid\":1}"
+        },
+        "currsprint": {
+          "type": "string",
+          "required": true,
+          "example": "{\"projid\":1,\"name\":\"Name\"}"
+        },
+        "getstories": {
+          "type": "string",
+          "required": true,
+          "example": "{\"projid\":1,\"sprintid\":1}"
+        },
+        "setstory": {
+          "type": "string",
+          "required": true,
+          "example": "{\"description\":\"This is a story\",\"sprintid\":1,\"projid\":1}"
+        },
+        "updstorycol": {
+          "type": "string",
+          "required": true,
+          "example": "{\"colid\":1,\"storyname\":\"Story name\",\"sprintid\":1,\"projid\":1}"
+        },
+        "sprintstatus": {
+          "type": "string",
+          "required": true,
+          "example": "{\"sprintid\":1,\"projid\":1}"
+        },
+        "endsprint": {
+          "type": "string",
+          "required": true,
+          "example": "{\"sprintid\":1,\"projid\":1}"
+        },
+        "unfinishedstories": {
+          "type": "string",
+          "required": true,
+          "example": "{\"sprintid\":1,\"projid\":1}"
+        },
+        "movestory": {
+          "type": "string",
+          "required": true,
+          "example": "{\"sprintid\":1,\"projid\":1,\"storyid\":1}"
+        },
+        "editstory": {
+          "type": "string",
+          "required": true,
+          "example": "{\"newstory\":\"This is a new story\",\"sprintid\":1,\"projid\":1,\"oldstory\":\"This is the old story\"}"
+        },
+        "nextsprint": {
+          "type": "string",
+          "required": true,
+          "example": "{\"projid\":1}"
         }
       }
     }
