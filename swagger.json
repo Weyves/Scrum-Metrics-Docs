@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Scrum-Metrics"
+    "title": "Scrum-Metrics v2"
   },
   "host": "192.168.0.108:3000",
   "basePath": "/",
@@ -851,7 +851,7 @@
         "editstory": {
           "type": "string",
           "required": true,
-          "example": "{\"newstory\":\"This is a new story\",\"sprintid\":1,\"projid\":1,\"oldstory\":\"This is the old story\"}"
+          "example": "{\"newstory\":\"This is one new story\",\"sprintid\":1,\"projid\":1,\"oldstory\":\"This is the old story\"}"
         },
         "nextsprint": {
           "type": "string",
