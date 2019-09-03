@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Scrum-Metrics v2"
+    "title": "Scrum-Metrics"
   },
   "host": "192.168.0.116:3000",
   "basePath": "/",
