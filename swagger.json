@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "title": "Scrum-Metrics v2"
   },
-  "host": "192.168.0.108:3000",
+  "host": "192.168.0.116:3000",
   "basePath": "/",
   "schemes": [
     "http"
@@ -18,7 +18,7 @@
   "paths": {
     "/api/postuser": {
       "post": {
-        "description": "Create a new user entry in the database",
+        "description": "Create a new user entry in the database.",
         "summary": "Post a user in the database",
         "operationId": "setUser",
         "parameters": [
