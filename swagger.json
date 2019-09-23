@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.3.0",
-    "title": "Scrum Metrics"
+    "version": "1.3.2",
+    "title": "Scrum Metrics API"
   },
   "host": "192.168.0.116:3000",
   "basePath": "/",
@@ -228,6 +228,35 @@
           },
           "400": {
             "description": "Missing data"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/api/deluser": {
+      "post": {
+        "description": "Deletes the user's account",
+        "operationId": "deleteAccount",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/deluserbody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Incorrect password."
+          },
+          "201": {
+            "description": "Deleted succesfully"
+          },
+          "400": {
+            "description": "Missing Data"
           },
           "500": {
             "description": "Database error"
@@ -973,6 +1002,11 @@
           "type": "string",
           "required": true,
           "example": "{\"projid\":1}"
+        },
+        "deluserbody": {
+          "type": "string",
+          "required": true,
+          "example": "{\"userid\":1,\"password\":\"password\"}"
         }
       }
     }
