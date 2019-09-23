@@ -178,6 +178,33 @@
         }
       }
     },
+    "/api/passupd": {
+      "put": {
+        "description": "Updates the given username's password with the new given one",
+        "summary": "Updates user's password",
+        "operationId": "updatePass",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Users/properties/passupdbody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Password updated"
+          },
+          "400": {
+            "description": "Missing data"
+          },
+          "500": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
     "/api/allupd": {
       "put": {
         "description": "Updates the given username's name and email with the new given name and email",
@@ -821,6 +848,11 @@
           "type": "string",
           "required": true,
           "example": "{\"name\":\"new name\",\"username\":\"test\"}"
+        },
+        "passupdbody": {
+          "type": "string",
+          "required": true,
+          "example": "{\"newpass\":\"new password\",\"username\":\"test\"}"
         },
         "emailupdbody": {
           "type": "string",
